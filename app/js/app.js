@@ -1,7 +1,7 @@
 NodeList.prototype.__proto__ = Array.prototype
 
 void function(){
-  var menuItems = document.querySelectorAll('header .link')
+  var menuItems = document.querySelectorAll('header > a')
   var pages = document.querySelectorAll('.page')
 
   var active = null
@@ -10,9 +10,16 @@ void function(){
       active.classList.remove('active')
       active = null
     }
-    if (menuItem) {
-      menuItem.classList.add('active')
-      active = menuItem
+
+    menuItem.classList.add('active')
+    active = menuItem
+
+    if (location.hash !== menuItem.href) {
+      if (history && history.replaceState) {
+        history.replaceState({}, '', menuItem.href)
+      } else {
+        location.hash = menuItem.href
+      }
     }
   }
 
@@ -26,11 +33,13 @@ void function(){
     return item
   }
 
-  var initialPage = RegExp(window.location.hash + '$')
+  var initialPage = location.hash && RegExp(location.hash + '$')
 
   pages.forEach(function(page){
     var menuItem = getMenuItem(page.id)
-    if (menuItem && initialPage.test(menuItem.href)) activate(menuItem)
+    if (initialPage && initialPage.test(menuItem.href)) {
+      activate(menuItem)
+    }
 
     function handler() { activate(menuItem) }
 

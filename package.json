@@ -1,0 +1,22 @@
+{
+  "name": "ccj",
+  "version": "1.0.0",
+  "description": "La Cumbre Climática de los Jóvenes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mjlescano/ccj.git"
+  },
+  "author": "mjlescano",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mjlescano/ccj/issues"
+  },
+  "homepage": "https://github.com/mjlescano/ccj#readme",
+  "dependencies": {
+    "express": "^4.13.0"
+  }
+}
