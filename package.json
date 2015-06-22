@@ -16,7 +16,10 @@
     "url": "https://github.com/mjlescano/ccj/issues"
   },
   "homepage": "https://github.com/mjlescano/ccj#readme",
+  "engines": {
+    "node": "0.12.4"
+  },
   "dependencies": {
     "express": "^4.13.0"
-  }
+  },
 }
