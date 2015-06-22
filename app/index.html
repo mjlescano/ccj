@@ -1,25 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
   <meta charset="utf-8">
   <title>La Cumbre Climática de los Jóvenes - De París a Buenos Aires</title>
   <link rel="stylesheet" type="text/css" href="css/app.css">
-
 </head>
 <body>
   <div class="header-wrapper">
     <header>
-      <a class="logo" href="#home" title="Home">
+      <a class="logo" href="#home" title="Home" data-scroll>
         <img src="img/header-logo.png" alt="La Cumbre Climática de los Jóvenes">
       </a>
-      <a class="link" href="#quienes-somos">¿Quiénes Somos?</a>
-      <a class="link" href="#agenda">Agenda</a>
-      <a class="link" href="#como-participo">¿Cómo Participo?</a>
-      <a class="link" href="#capacitacion">Capacitación</a>
-      <a class="link" href="#contacto">Contacto</a>
+      <a class="link" data-page="quienes-somos" href="#quienes-somos" data-scroll>
+        ¿Quiénes Somos?
+      </a>
+      <a class="link" data-page="agenda" href="#agenda" data-scroll>
+        Agenda
+      </a>
+      <a class="link" data-page="como-participo" href="#como-participo" data-scroll>
+        ¿Cómo Participo?
+      </a>
+      <a class="link" data-page="capacitacion" href="#capacitacion" data-scroll>
+        Capacitación
+      </a>
+      <a class="link" data-page="contacto" href="#contacto" data-scroll>
+        Contacto
+      </a>
     </header>
   </div>
+
+  <article class="page" id="home"></article>
+  <article class="page" id="quienes-somos"></article>
+  <article class="page" id="agenda"></article>
+  <article class="page" id="como-participo"></article>
+  <article class="page" id="capacitacion"></article>
+  <article class="page" id="contacto"></article>
+
+  <script src="js/libs.js"></script>
+  <script>
+    smoothScroll.init()
+    smoothScroll.animateScroll(null, window.location.hash)
+  </script>
+  <script src="js/app.js"></script>
 
 </body>
 </html>
