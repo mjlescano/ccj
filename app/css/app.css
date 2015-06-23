@@ -222,6 +222,14 @@ header .link.active:after {
   font-weight: 900;
 }
 
+.text-block a {
+  color: #ffde4c;
+}
+
+.text-block a:hover {
+  text-decoration: underscore;
+}
+
 #home .logo {
   display: block;
   margin: -20px auto 40px;
@@ -235,6 +243,10 @@ header .link.active:after {
 #home .text-block {
   margin: 0 auto;
   width: 768px;
+}
+
+#quienes-somos {
+  padding-top: 220px;
 }
 
 #quienes-somos .text-block {
@@ -302,4 +314,137 @@ header .link.active:after {
 
 .instituciones .link:hover {
   color: #ffde4c;
+}
+
+#agenda .text-block {
+  margin: 0 auto 40px;
+  width: 600px;
+}
+
+.calendar {
+  position: relative;
+  max-width: 1152px;
+  margin: 0 auto 60px;
+  padding: 0 10px;
+}
+
+.calendar .item {
+  float: left;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 25%;
+  height: 357px;
+  padding: 30px 40px 0;
+  border-left: 1px solid rgba(255, 255, 255, .6);
+}
+
+.calendar .item:first-child {
+  border-left: none;
+}
+
+@media all and (max-width: 960px) {
+  .calendar .item {
+    width: 50%;
+  }
+
+  .calendar .item:nth-child(3n) {
+    border-left: none;
+  }
+}
+
+@media all and (max-width: 550px) {
+  .calendar .item {
+    width: 100%;
+    border-left: none;
+  }
+}
+
+.calendar .day {
+  max-width: 100%;
+  width: 150px;
+  margin: 0 auto 40px;
+  overflow: hidden;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.calendar .day h1 {
+  font-size: 1.7em;
+  margin: 0;
+  padding: 10px 0 4px;
+  color: #fff;
+  font-weight: 100;
+  background-color: #0E7E05;
+}
+
+.calendar .day p {
+  font-size: 4.5em;
+  margin: 0;
+  padding: 10px 0 19px;
+  color: #0E7E05;
+  background-color: #fff;
+}
+
+.calendar .desc {
+  margin: 0 auto;
+  padding: 16px 20px;
+  max-width: 100%;
+  width: 200px;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #eee;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 100;
+  color: #eee;
+  background-color: rgba(0, 0, 0, .15);
+}
+
+#como-participo {
+  padding-top: 200px;
+}
+
+#como-participo .text-block {
+  float: left;
+  width: 31%;
+  margin: 0 1% 40px;
+  text-align: left;
+}
+
+@media all and (max-width: 960px) {
+  #como-participo .text-block {
+    width: 48%;
+    margin: 0 1% 20px;
+  }
+}
+
+@media all and (max-width: 550px) {
+  #como-participo .text-block {
+    width: 100%;
+    margin: 0 0 20px;
+  }
+}
+
+#capacitacion .text-block {
+  float: left;
+  width: 48%;
+  margin: 0 1% 20px;
+  text-align: left;
+}
+
+@media all and (max-width: 550px) {
+  #capacitacion .text-block {
+    width: 100%;
+    margin: 0 0 20px;
+  }
+}
+
+#contacto {
+  padding-top: 300px;
+}
+
+#contacto .text-block {
+  width: 450px;
+  margin: 0 auto;
 }
