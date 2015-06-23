@@ -1,6 +1,36 @@
 NodeList.prototype.__proto__ = Array.prototype
 
 void function(){
+  // http://davidwalsh.name/javascript-debounce-function
+  function debounce(func, wait, immediate) {
+    var timeout
+    return function() {
+      var context = this, args = arguments
+      var later = function() {
+        timeout = null
+        if (!immediate) func.apply(context, args)
+      }
+      var callNow = immediate && !timeout
+      clearTimeout(timeout)
+      timeout = setTimeout(later, wait)
+      if (callNow) func.apply(context, args)
+    }
+  }
+
+  var hrefToSet = null
+  var setHashDebounced = debounce(function(){
+    if (history && history.replaceState) {
+      history.replaceState({}, '', hrefToSet)
+    } else {
+      location.hash = hrefToSet
+    }
+  }, 300)
+
+  function setHash(href) {
+    hrefToSet = href
+    setHashDebounced()
+  }
+
   var menuItems = document.querySelectorAll('header > a')
   var pages = document.querySelectorAll('.page')
 
@@ -14,13 +44,7 @@ void function(){
     menuItem.classList.add('active')
     active = menuItem
 
-    if (location.hash !== menuItem.href) {
-      if (history && history.replaceState) {
-        history.replaceState({}, '', menuItem.href)
-      } else {
-        location.hash = menuItem.href
-      }
-    }
+    setHash(menuItem.href)
   }
 
   function getMenuItem(pageName) {

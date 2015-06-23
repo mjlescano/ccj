@@ -5,16 +5,55 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 * { box-sizing: border-box }
 
 body {
+  z-index: 1;
+  position: relative;
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
   font-weight: 300;
   font-family: sans-serif;
   font-kerning: normal;
   background-size: cover;
-  background-color: #008637;
-  background-attachment: fixed;
-  background-position: center bottom;
-  background-image: url('../img/home-bg.jpg');
+  background-color: #04B117;
+  background: url('../img/home-bg.jpg') fixed center bottom;
 }
+
+/* background fade on-load */
+.bg {
+  display: none;
+}
+
+@media screen {
+  .bg {
+    display: block;
+    pointer-events: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    opacity: 0;
+    content: '';
+    z-index: 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #04B117;
+    -webkit-transition: opacity .4s ease-out;
+    -moz-transition: opacity .4s ease-out;
+    -ms-transition: opacity .4s ease-out;
+    -o-transition: opacity .4s ease-out;
+    transition: opacity .4s ease-out;
+  }
+
+  .bg.active {
+    opacity: 1;
+    -webkit-transition: opacity 0;
+    -moz-transition: opacity 0;
+    -ms-transition: opacity 0;
+    -o-transition: opacity 0;
+    transition: opacity 0;
+  }
+}
+/* Fin background fade on-load */
 
 .header-wrapper {
   position: absolute;

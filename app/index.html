@@ -6,6 +6,20 @@
   <link rel="stylesheet" type="text/css" href="css/app.css">
 </head>
 <body>
+  <!-- background fade on-load -->
+  <div class="bg active"></div>
+  <script type="text/javascript">
+    (function(){
+      var bg = document.querySelector('.bg')
+      var img = new Image()
+      img.onload = function onload () {
+        bg.className = bg.className.replace(/active/, '')
+      }
+      setTimeout(onload, 4000)
+      img.src = 'img/home-bg.jpg'
+    })()
+  </script>
+  <!-- Fin background fade on-load -->
   <div class="header-wrapper">
     <header>
       <a class="logo" data-page="home" href="#home" title="Home" data-scroll>
