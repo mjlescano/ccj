@@ -1,6 +1,13 @@
+// Sorry for the mess. The site needed no build proccess.
+
+// Init Scroll Position
+smoothScroll.init()
+smoothScroll.animateScroll(null, window.location.hash)
+
+// Make querySelectorAll() results iterables.
 NodeList.prototype.__proto__ = Array.prototype
 
-void function(){
+;(function(){
   // http://davidwalsh.name/javascript-debounce-function
   function debounce(func, wait, immediate) {
     var timeout
@@ -18,7 +25,7 @@ void function(){
   }
 
   var hrefToSet = null
-  var setHashDebounced = debounce(function(){
+  var navigateDebounced = debounce(function(){
     if (history && history.replaceState) {
       history.replaceState({}, '', hrefToSet)
     } else {
@@ -26,26 +33,27 @@ void function(){
     }
   }, 300)
 
-  function setHash(href) {
+  function navigate(href) {
     hrefToSet = href
-    setHashDebounced()
+    navigateDebounced()
   }
+
+  var activeItem = null
+  function activate(item) {
+    if (activeItem) {
+      activeItem.classList.remove('active')
+      activeItem = null
+    }
+
+    item.classList.add('active')
+    activeItem = item
+
+    navigate(item.href)
+  }
+
 
   var menuItems = document.querySelectorAll('header > a')
   var pages = document.querySelectorAll('.page')
-
-  var active = null
-  function activate(menuItem) {
-    if (active) {
-      active.classList.remove('active')
-      active = null
-    }
-
-    menuItem.classList.add('active')
-    active = menuItem
-
-    setHash(menuItem.href)
-  }
 
   function getMenuItem(pageName) {
     var item
@@ -61,6 +69,7 @@ void function(){
 
   pages.forEach(function(page){
     var menuItem = getMenuItem(page.id)
+
     if (initialPage && initialPage.test(menuItem.href)) {
       activate(menuItem)
     }
@@ -78,4 +87,4 @@ void function(){
       offset: '-40%'
     })
   })
-}()
+})()
