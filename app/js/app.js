@@ -105,3 +105,11 @@ NodeList.prototype.__proto__ = Array.prototype
     })
   })
 })()
+
+// Mobile Menu
+;(function(){
+  var el = document.querySelector('[data-mobile-header]')
+  el.addEventListener('change', function(){
+    smoothScroll.animateScroll(null, el.options[el.selectedIndex].value)
+  }, false)
+})()
