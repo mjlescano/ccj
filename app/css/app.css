@@ -182,6 +182,7 @@ header .link.active:after {
 
 .page {
   display: block;
+  margin-bottom: 150px;
   padding-top: 120px;
   min-height: 768px;
   min-height: 100vh;
@@ -243,10 +244,6 @@ header .link.active:after {
 #home .text-block {
   margin: 0 auto;
   width: 768px;
-}
-
-#quienes-somos {
-  padding-top: 220px;
 }
 
 #quienes-somos .text-block {
@@ -401,10 +398,6 @@ header .link.active:after {
   background-color: rgba(0, 0, 0, .15);
 }
 
-#como-participo {
-  padding-top: 200px;
-}
-
 #como-participo .text-block {
   float: left;
   width: 31%;
@@ -438,10 +431,6 @@ header .link.active:after {
     width: 100%;
     margin: 0 0 20px;
   }
-}
-
-#contacto {
-  padding-top: 300px;
 }
 
 #contacto .text-block {
