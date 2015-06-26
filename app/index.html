@@ -8,10 +8,10 @@
 </head>
 <body>
   <!-- background fade on-load α -->
-  <div class="bg active"></div>
+  <div class="bg-loader active"></div>
   <script type="text/javascript">
     ;(function(){
-      var bg = document.querySelector('.bg')
+      var bg = document.querySelector('.bg-loader')
       var img = new Image()
       img.onload = function onload () {
         bg.className = bg.className.replace(/active/, '')
@@ -183,6 +183,7 @@
   </article>
 
   <!-- Scripts α -->
+  <script src="//cdn.polyfill.io/v1/polyfill.min.js"></script>
   <script src="js/libs.js"></script>
   <script src="js/app.js"></script>
   <!-- Scripts ω -->

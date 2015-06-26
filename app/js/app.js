@@ -1,5 +1,8 @@
 // Sorry for the mess. The site needed no build proccess.
 
+// Polyfill for vm vh on css
+viewportUnitsBuggyfill.init()
+
 // Init Scroll Position
 smoothScroll.init()
 smoothScroll.animateScroll(null, window.location.hash)

@@ -20,36 +20,34 @@ body {
   font-family: sans-serif;
   font-kerning: normal;
   letter-spacing: 1px;
-  background-size: cover;
-  background-color: #04B117;
-  background: url('../img/bg.jpg') fixed center bottom;
+  background: #04B117 url('../img/bg.jpg') fixed center bottom;
 }
 
 @media screen {
   body {
-    background-size: auto 100%;
+    background-size: auto 100vh;
   }
 }
 
 @media screen and (min-aspect-ratio: 43/20) {
   body {
-    background-size: 100% auto;
+    background-size: 100vw auto;
   }
 }
 
 /* background fade on-load α */
-.bg {
+.bg-loader {
   display: none;
 }
 
 @media all {
-  .bg {
+  .bg-loader {
+    opacity: 0;
     display: block;
     pointer-events: none;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
-    opacity: 0;
     z-index: 0;
     position: fixed;
     left: 0;
@@ -64,7 +62,7 @@ body {
     transition: opacity .4s ease-out;
   }
 
-  .bg.active {
+  .bg-loader.active {
     opacity: 1;
     -webkit-transition: opacity 0;
     -moz-transition: opacity 0;
@@ -231,6 +229,8 @@ header .link.active:after {
 
 .page {
   display: block;
+  z-index: 1;
+  position: relative;
   margin-bottom: 150px;
   padding-top: 100px;
   min-height: 768px;
@@ -489,17 +489,10 @@ header .link.active:after {
   text-align: left;
 }
 
-@media all and (max-width: 960px) {
+@media all and (max-width: 767px) {
   #como-participo .text-block {
-    width: 48%;
-    margin: 0 1% 20px;
-  }
-}
-
-@media all and (max-width: 550px) {
-  #como-participo .text-block {
-    width: 100%;
-    margin: 0 0 20px;
+    width: 90%;
+    margin: 0 5% 20px;
   }
 }
 
@@ -510,10 +503,10 @@ header .link.active:after {
   text-align: left;
 }
 
-@media all and (max-width: 550px) {
+@media all and (max-width: 767px) {
   #capacitacion .text-block {
-    width: 100%;
-    margin: 0 0 20px;
+    width: 90%;
+    margin: 0 5% 20px;
   }
 }
 
