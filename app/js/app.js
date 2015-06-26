@@ -29,7 +29,7 @@ NodeList.prototype.__proto__ = Array.prototype
     if (history && history.replaceState) {
       history.replaceState({}, '', hrefToSet)
     } else {
-      location.hash = hrefToSet
+      window.location = hrefToSet
     }
   }, 300)
 
@@ -37,6 +37,14 @@ NodeList.prototype.__proto__ = Array.prototype
     hrefToSet = href
     navigateDebounced()
   }
+
+  var scrolledTo = window.location.hash
+  var scrollToCurrentPageDebounced = debounce(function(){
+    var scrollTo = window.location.hash
+    if (scrolledTo && scrolledTo === scrollTo) return
+    smoothScroll.animateScroll(null, window.location.hash)
+    scrolledTo = scrollTo
+  }, 1100)
 
   var activeItem = null
   function activate(item) {
@@ -74,17 +82,26 @@ NodeList.prototype.__proto__ = Array.prototype
       activate(menuItem)
     }
 
-    function handler() { activate(menuItem) }
+    function handler() {
+      activate(menuItem)
+      scrollToCurrentPageDebounced()
+    }
 
     new Waypoint({
       element: page,
-      handler: handler,
-      offset: '40%'
+      handler: function(direction){
+        console.log(page.id, 'top-in-view')
+        if (direction == 'down') handler()
+      },
+      offset: '100%'
     })
     new Waypoint({
       element: page,
-      handler: handler,
-      offset: '-40%'
+      handler: function(direction){
+        console.log(page.id, 'bottom-in-view')
+        if (direction == 'up') handler()
+      },
+      offset: '-100%'
     })
   })
 })()
