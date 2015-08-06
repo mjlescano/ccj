@@ -93,15 +93,14 @@ NodeList.prototype.__proto__ = Array.prototype
     new Waypoint({
       element: page,
       handler: function(direction){
-        console.log(page.id, 'top-in-view')
         if (direction == 'down') handler()
       },
       offset: '100%'
     })
+
     new Waypoint({
       element: page,
       handler: function(direction){
-        console.log(page.id, 'bottom-in-view')
         if (direction == 'up') handler()
       },
       offset: '-100%'

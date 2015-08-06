@@ -304,25 +304,6 @@ header .link.active:after {
   margin-bottom: 2em;
 }
 
-#home .text-block.paris {
-  width: 1024px;
-  margin-bottom: 2em;
-  text-align: left;
-  padding-bottom: 0;
-}
-
-#home .text-block.paris img {
-  float: left;
-  display: block;
-  margin: 0 1em 1em 0;
-  max-width: 100%;
-  width: 150px;
-}
-
-#home .text-block.paris p {
-  margin-bottom: 1em;
-}
-
 
 #quienes-somos .text-block {
   margin: 0 auto 40px;
@@ -420,6 +401,21 @@ header .link.active:after {
 
 .instituciones .link:hover {
   color: #ffde4c;
+}
+
+#paris .text-block {
+  margin: 0 auto 40px;
+  width: 500px;
+}
+
+.paris-logo {
+  display: block;
+  margin: 0 auto 2em;
+  padding: 1em 2.5em;
+  max-width: 100%;
+  width: 300px;
+  border-radius: 4px;
+  background-color: #fff;
 }
 
 #agenda .text-block {
