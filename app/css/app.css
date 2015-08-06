@@ -278,11 +278,14 @@ header .link.active:after {
 }
 
 .text-block a {
+  border-bottom: 1px solid transparent;
   color: #ffde4c;
+  text-decoration: none;
+  transition: border .15s;
 }
 
 .text-block a:hover {
-  text-decoration: underscore;
+  border-bottom: 1px solid rgba(255, 222, 76, .8);
 }
 
 #home .logo {
