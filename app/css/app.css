@@ -10,6 +10,7 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 .clear {
   clear: both;
+  line-height: 0;
 }
 
 body {
@@ -296,8 +297,32 @@ header .link.active:after {
 
 #home .text-block {
   margin: 0 auto;
-  width: 1024px;
 }
+
+#home .text-block.intro {
+  width: 1024px;
+  margin-bottom: 2em;
+}
+
+#home .text-block.paris {
+  width: 1024px;
+  margin-bottom: 2em;
+  text-align: left;
+  padding-bottom: 0;
+}
+
+#home .text-block.paris img {
+  float: left;
+  display: block;
+  margin: 0 1em 1em 0;
+  max-width: 100%;
+  width: 150px;
+}
+
+#home .text-block.paris p {
+  margin-bottom: 1em;
+}
+
 
 #quienes-somos .text-block {
   margin: 0 auto 40px;
