@@ -527,6 +527,28 @@ header .link.active:after {
   text-align: left;
 }
 
+.capacitacion-videos {
+  position: relative;
+  margin: 0 auto 1em;
+  width: 640px;
+  max-width: 90%;
+  max-width: calc(100% - 2em);
+}
+
+.capacitacion-videos:after {
+  content: '';
+  display: block;
+  padding-top: 56%;
+}
+
+.capacitacion-videos iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 @media all and (max-width: 767px) {
   #capacitacion .text-block {
     width: 90%;
