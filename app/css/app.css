@@ -238,6 +238,27 @@ header .link.active:after {
   min-height: 100vh;
 }
 
+.page.centered {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .page:last-of-type {
   margin-bottom: 0;
 }
@@ -419,6 +440,16 @@ header .link.active:after {
   width: 300px;
   border-radius: 4px;
   background-color: #fff;
+}
+
+#buenosaires .text-block {
+  margin: 0 auto 40px;
+  width: 500px;
+}
+
+#prensa .text-block {
+  margin: 0 auto 40px;
+  width: 500px;
 }
 
 #agenda .text-block {
