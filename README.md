@@ -1,5 +1,7 @@
 ## La Cumbre Climática de los Jóvenes
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mjlescano/ccj.svg)](https://greenkeeper.io/)
+
 _Files are located at `/app`._
 
 ### Contributors
